@@ -34,7 +34,7 @@ function codeRunTemplate(code, onlyRun) {
   if (/React.Component/.test(code)) {
     // Don't need to use UUID
     const ID = 'B' + Math.random().toString(36).substr(2, 5).replace(/\d/g,'A');
-    components.push(`const ${ID} = ${code}`);
+    components.push(`const ${ID} = ${code};`);
     return `<${ID} />`
   } else {
     return `
